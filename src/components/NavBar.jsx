@@ -23,16 +23,17 @@ function Navbar() {
         <li className={location.pathname === '/' ? 'active' : ''}>
           <Link to="/" onClick={closeMenu}>Inicio</Link>
         </li>
+        <li className={location.pathname === '/sobremi' ? 'active' : ''}>
+          <Link to="/sobremi" onClick={closeMenu}>Sobre Mí</Link>
+        </li>
         <li className={location.pathname === '/proyectos' ? 'active' : ''}>
           <Link to="/proyectos" onClick={closeMenu}>Proyectos</Link>
         </li>
         <li className={location.pathname === '/contacto' ? 'active' : ''}>
           <Link to="/contacto" onClick={closeMenu}>Contacto</Link>
         </li>
-        <li className={location.pathname === '/sobremi' ? 'active' : ''}>
-          <Link to="/sobremi" onClick={closeMenu}>Sobre Mí</Link>
-        </li>
       </ul>
+
     </nav>
   );
 }
