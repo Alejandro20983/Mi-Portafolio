@@ -2,50 +2,84 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #111;
-  padding: 15px 20px;
-  color: white;
-  position: relative;
+  background-color: #121212;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #333;
 }
 
-.hamburger {
+.navbar-logo a {
+  color: gold;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.menu-icon {
   display: none;
-  font-size: 24px;
+  font-size: 1.8rem;
+  color: white;
   cursor: pointer;
 }
 
-/* Menú horizontal por defecto */
 .navbar-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 30px;
+  margin: 0;
 }
 
-/* Responsive: menú oculto en móvil */
+.navbar-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  color: gold;
+}
+
+.navbar-links .active a {
+  color: gold;
+  border-bottom: 2px solid gold;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .hamburger {
+  .menu-icon {
     display: block;
   }
 
   .navbar-links {
     position: absolute;
-    top: 60px;
-    left: 0;
+    top: 70px;
+    right: 0;
     flex-direction: column;
+    background-color: #121212;
     width: 100%;
-    background-color: #111;
+    text-align: center;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
-    z-index: 1000;
   }
 
   .navbar-links.active {
-    max-height: 600px; /* Ajusta esto según la cantidad de enlaces */
+    max-height: 600px;
+    padding-bottom: 15px;
   }
 
   .navbar-links li {
-    padding: 15px 20px;
-    border-top: 1px solid #222;
+    margin: 15px 0;
   }
 }
+
+
+/* Móvil abierto (visible) */
+.navbar-links.active {
+  max-height: 200px;
+  padding-bottom: 15px;
+}
+
