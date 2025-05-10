@@ -2,84 +2,50 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #121212;
-  padding: 20px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  border-bottom: 1px solid #333;
-}
-
-.navbar-logo a {
-  color: gold;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.menu-icon {
-  display: none;
-  font-size: 1.8rem;
+  background-color: #111;
+  padding: 15px 20px;
   color: white;
+  position: relative;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
   cursor: pointer;
 }
 
+/* Menú horizontal por defecto */
 .navbar-links {
   list-style: none;
   display: flex;
-  gap: 30px;
-  margin: 0;
+  gap: 20px;
 }
 
-.navbar-links li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
-
-.navbar-links li a:hover {
-  color: gold;
-}
-
-.navbar-links .active a {
-  color: gold;
-  border-bottom: 2px solid gold;
-}
-
-/* Responsive */
+/* Responsive: menú oculto en móvil */
 @media (max-width: 768px) {
-  .menu-icon {
+  .hamburger {
     display: block;
   }
 
   .navbar-links {
     position: absolute;
-    top: 70px;
-    right: 0;
+    top: 60px;
+    left: 0;
     flex-direction: column;
-    background-color: #121212;
     width: 100%;
-    text-align: center;
+    background-color: #111;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
+    z-index: 1000;
   }
 
   .navbar-links.active {
-    max-height: 600px;
-    padding-bottom: 15px;
+    max-height: 600px; /* Ajusta esto según la cantidad de enlaces */
   }
 
   .navbar-links li {
-    margin: 15px 0;
+    padding: 15px 20px;
+    border-top: 1px solid #222;
   }
 }
-
-
-/* Móvil abierto (visible) */
-.navbar-links.active {
-  max-height: 200px;
-  padding-bottom: 15px;
-}
-
