@@ -1,0 +1,54 @@
+.sobre-mi {
+  background-color: #282c34;
+  padding: 80px 20px;
+  margin: 0 auto;
+  color: white;
+}
+
+.sobre-mi h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: gold;
+}
+
+.sobre-mi p {
+  font-size: 1.1rem;
+  line-height: 2.2;
+  margin-bottom: 15px;
+}
+.formacion {
+  margin-top: 40px;
+}
+
+.formacion h2 {
+  font-size: 1.7rem;
+  color: gold;
+  margin-bottom: 20px;
+}
+
+.estudio {
+  background-color: #1e1e1e;
+  border-left: 4px solid gold;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.estudio:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px gold;
+}
+
+.estudio h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.estudio p {
+  margin: 5px 0 0;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
