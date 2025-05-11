@@ -78,7 +78,6 @@
   .home-logo {
   height: 250px;
   opacity: 0.85;
-  width: auto;
   display: block;
   margin: 0 auto 20px auto;
 }
@@ -91,6 +90,9 @@
     to {
       background-color: #282c34;
     }
+  }
+  .fade-in{
+    animation: fadeIn 1s ease forwards;
   }
   
   @keyframes fadeUp {
