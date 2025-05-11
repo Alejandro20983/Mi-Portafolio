@@ -4,7 +4,7 @@ import './Home.css';
 function Home(){
     return(
         <div className="home">
-            <img src={logo} alt="Mi logo" className="home-logo"/>
+            <img src={logo} alt="Mi logo" className="home-logo fade-in"/>
             <h1>Hola soy Alejandro Gonzalez</h1>
             <p className="descripcion">
                 Soy un desarrollador full stack con poca experiencia en el desarrollo de aplicaciones web.
