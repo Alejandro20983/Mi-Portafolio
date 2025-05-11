@@ -47,6 +47,11 @@
   color: gold;
   border-bottom: 2px solid gold;
 }
+.logo-img {
+  height: 40px;
+  width: auto;
+}
+
 
 /* Responsive */
 @media (max-width: 768px) {
