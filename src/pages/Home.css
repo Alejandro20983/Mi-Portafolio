@@ -75,6 +75,13 @@
     font-size: 1.1rem;
     margin-top: 5px;
   }
+  .home-logo {
+  height: 250px;
+  width: auto;
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
   /* Animaciones */
   @keyframes fadeIn {
     from {
