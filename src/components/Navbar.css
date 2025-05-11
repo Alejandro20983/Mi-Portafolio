@@ -7,6 +7,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  color: white;
   border-bottom: 1px solid #333;
 }
 
@@ -17,7 +18,7 @@
   text-decoration: none;
 }
 
-.menu-icon {
+.hamburger {
   display: none;
   font-size: 1.8rem;
   color: white;
@@ -49,7 +50,7 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .menu-icon {
+  .hamburger {
     display: block;
   }
 
@@ -72,14 +73,14 @@
   }
 
   .navbar-links li {
-    margin: 15px 0;
+    margin: 15px 20px;
+    border-top: 1px solid #222;
   }
 }
 
 
 /* Móvil abierto (visible) */
 .navbar-links.active {
-  max-height: 200px;
-  padding-bottom: 15px;
+  max-height: 600px;
 }
 
