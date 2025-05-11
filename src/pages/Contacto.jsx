@@ -3,39 +3,60 @@ import './Contacto.css';
 import {supabase} from '../supabaseClient';
 import { useState } from "react";
 
-function Contacto(){
-
+function Contacto() {
     const [form, setForm] = useState({
         nombre: '',
         email: '',
         mensaje: '',
     });
 
-    const handleChange = (e) =>{
-        setForm({...form,[e.target.name]: e.target.value});
+    const handleChange = (e) => {
+        setForm({...form, [e.target.name]: e.target.value});
     }
 
-    const handleSubmit = async (e) =>{
+    const handleSubmit = async (e) => {
         e.preventDefault();
-    
-        const {error} = await supabase.from('contacto').insert([form]);
 
-        if(error){
-            alert('Error al enviar el mensaje')
+        // Enviar datos al backend
+        const { error } = await supabase.from('contacto').insert([form]);
+
+        if (error) {
+            alert('Error al enviar el mensaje');
             console.error(error);
-        }else{
-            alert('Mensaje enviado con exito')
-            setForm({nombre : '', email:'',mensaje:''});
+        } else {
+            alert('Mensaje enviado con éxito');
+            setForm({ nombre: '', email: '', mensaje: '' }); // Reseteamos el formulario
         }
     }
-    return(
+
+    return (
         <section className="contacto">
-            <h2>Contactame</h2>
-            <p>Si deseas conversar sobre algún proyecto o un presupuesto para un proyecto contactame</p>
+            <h2>Contáctame</h2>
+            <p>Si deseas conversar sobre algún proyecto o un presupuesto para un proyecto, contactame</p>
             <form className="formulario" onSubmit={handleSubmit}>
-                <input type="text" placeholder="Tu nombre" value={form.nombre} onChange={handleChange} required/>
-                <input type="email" placeholder="Tu email" value={form.email} onChange={handleChange}  required/>
-                <textarea placeholder="Tu mensaje" value={form.mensaje} onChange={handleChange} required></textarea>
+                <input
+                    type="text"
+                    name="nombre" // Definir el nombre aquí
+                    placeholder="Tu nombre"
+                    value={form.nombre}
+                    onChange={handleChange}
+                    required
+                />
+                <input
+                    type="email"
+                    name="email" // Definir el nombre aquí
+                    placeholder="Tu email"
+                    value={form.email}
+                    onChange={handleChange}
+                    required
+                />
+                <textarea
+                    name="mensaje" // Definir el nombre aquí
+                    placeholder="Tu mensaje"
+                    value={form.mensaje}
+                    onChange={handleChange}
+                    required
+                />
                 <button type="submit">Enviar</button>
             </form>
             <div className="redes-sociales">
@@ -45,11 +66,12 @@ function Contacto(){
                 <a href="https://www.github.com/Alejandro20983" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-github"></i>
                 </a>
-                <a href="alejandropulido2809@gmail.com" target="_blank" rel="noopener noreferrer">
+                <a href="mailto:alejandropulido2809@gmail.com" target="_blank" rel="noopener noreferrer">
                     <i className="fas fa-envelope"></i>
                 </a>
             </div>
         </section>
     );
 }
+
 export default Contacto;
