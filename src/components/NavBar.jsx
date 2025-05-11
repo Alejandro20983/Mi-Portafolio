@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import logo from './aseets/logo.png';
 import './Navbar.css';
 
 function Navbar() {
@@ -16,7 +17,9 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="logo">Mi Portafolio</div>
+      <div className="logo">
+        <img src={logo} alt='Mi logo' className='logo-img'/>
+      </div>
       <div className="hamburger" onClick={toggleMenu}>
         ☰
       </div>
