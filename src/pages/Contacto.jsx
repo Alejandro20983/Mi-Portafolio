@@ -18,13 +18,14 @@ function Contacto() {
         e.preventDefault();
 
         // Enviar datos al backend
-        const { error } = await supabase.from('contacto').insert([form]);
+        const{nombre,email,mensaje} = form;
+        const { data,error } = await supabase.from('contacto').insert([nombre,email,mensaje]);
 
         if (error) {
-            alert('Error al enviar el mensaje');
+            alert('Error al enviar el mensaje',error);
             console.error(error);
         } else {
-            alert('Mensaje enviado con éxito');
+            alert('Mensaje enviado con éxito',data);
             setForm({ nombre: '', email: '', mensaje: '' }); // Reseteamos el formulario
         }
     }
